@@ -1,14 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
 import { Hourglass } from "../components/Loadings/hourglass";
+import { ErrorScreen } from "../components/ErrorScreen/index-error";
 
 interface IQueryHook {
   fetch: () => Promise<any>;
   queryKey: string;
 }
 
+interface IOutput<T> {
+  getError: JSX.Element | null;
+  getLoading: JSX.Element | null;
+  data: T[];
+}
+
 function getError(error: Error | null) {
   if (error) {
-    return <div>Error loading data</div>;
+    return <ErrorScreen />;
   }
   return null;
 }
@@ -20,7 +27,7 @@ function getLoading(isLoading: boolean) {
   return null;
 }
 
-export function useQueryHook({ fetch, queryKey }: IQueryHook) {
+export function useQueryHook<T>({ fetch, queryKey }: IQueryHook): IOutput<T> {
   const { data, error, isLoading } = useQuery({
     queryKey: [queryKey],
     queryFn: fetch,

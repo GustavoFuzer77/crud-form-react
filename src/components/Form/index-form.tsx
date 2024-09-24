@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import { useForm, FormProvider, SubmitHandler } from "react-hook-form";
+import { type ReactNode } from "react";
+import { useForm, FormProvider, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ZodSchema } from "zod";
 import { Button } from "@mui/material";
@@ -8,12 +8,14 @@ interface FormProps {
   onSubmit: SubmitHandler<FormData>;
   children: ReactNode;
   schema: ZodSchema;
+  initialValues: Record<string, any>;
 }
 
-const Form: React.FC<FormProps> = ({ schema, onSubmit, children }) => {
-  // useForm do react-hook-form com o zod resolver
+function Form({ schema, onSubmit, children, initialValues }: FormProps) {
   const methods = useForm<FormData>({
     resolver: zodResolver(schema),
+    mode: "onChange",
+    defaultValues: initialValues,
   });
 
   return (
@@ -21,11 +23,11 @@ const Form: React.FC<FormProps> = ({ schema, onSubmit, children }) => {
       <form onSubmit={methods.handleSubmit(onSubmit)}>
         {children}
         <Button variant="contained" color="primary" type="submit" fullWidth>
-          Enviar
+          Salvar
         </Button>
       </form>
     </FormProvider>
   );
-};
+}
 
 export default Form;

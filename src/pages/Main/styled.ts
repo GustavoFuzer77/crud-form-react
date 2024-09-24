@@ -7,6 +7,19 @@ import {
   IconButton,
 } from "@mui/material";
 import styled from "styled-components";
+import colors from "../../styles/colors";
+
+export const Text = styled.p`
+  font-size: 2rem;
+  color: ${colors.lightTextGray};
+`;
+
+export const CenterDiv = styled.div`
+  align-items: centrer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
 
 /* Estilização adicional para tabela */
 export const StyledTableContainer = styled(TableContainer)`
@@ -21,25 +34,25 @@ export const StyledTable = styled(Table)`
 export const StyledTableCell = styled(TableCell)`
   font-size: 1rem;
   font-weight: 500;
-  color: #4f4f4f;
+  color: ${colors.lightTextGray};
 `;
 
 export const StyledTableHeader = styled(TableHead)`
-  background-color: #f5f5f5;
+  background-color: ${colors.lightWhite200};
 `;
 
 export const StyledTableRow = styled(TableRow)`
   &:nth-of-type(even) {
-    background-color: #fafafa;
+    background-color: ${colors.lightWhite200};
   }
   &:hover {
-    background-color: #f0f4f8;
+    background-color: ${colors.lightWhite};
   }
 `;
 
 export const IconButtonStyled = styled(IconButton)`
-  color: #5c6bc0;
+  color: ${colors.lightBlue};
   &:hover {
-    color: #3f51b5;
+    color: ${colors.mediumBlue};
   }
 `;

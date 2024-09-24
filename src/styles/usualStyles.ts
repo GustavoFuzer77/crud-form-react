@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import colors from "./colors";
+import { breakPoints } from "./breakPoints";
 
 // cria 1 estilo para o section do form sempre quando for usar, vai manter esse padrão
 // não deixei settado direto no componente, para deixar desacoplado quando precisar trocar é so criar um novo "adapter"
@@ -8,17 +10,20 @@ export const FormSection = styled.section`
   padding: 1.6rem;
   border-radius: 1rem;
   background-color: #fff;
-  box-shadow: 0 0 1rem #000;
-  height: 36rem;
-  position: fixed;
-  inset: 0;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  max-height: 36rem;
+  overflow-y: auto;
+  position: relative;
 
   .header-form {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     color: #000;
+
+    display: "flex";
+    justify-content: "space-between";
+    align-items: "center";
 
     svg {
       cursor: pointer;
@@ -28,15 +33,19 @@ export const FormSection = styled.section`
       }
     }
   }
-`;
 
+  @media screen and (max-width: ${breakPoints.largeMobile}px) {
+    width: 100svw;
+    height: 100svh;
+  }
+`;
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f4f6f9;
+  background-color: ${colors.lightWhite};
 `;
 
 export const Section = styled.section`
@@ -55,13 +64,18 @@ export const Header = styled.div`
   align-items: center;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #e0e0e0;
-  color: #2c2c2c;
+  border-bottom: 1px solid ${colors.mediumWhite};
+  color: ${colors.textGray};
 
   h2 {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #333;
+    color: ${colors.textGray};
+  }
+
+  @media screen and (max-width: ${breakPoints.largeMobile}px) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 
