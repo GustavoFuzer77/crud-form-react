@@ -12,7 +12,7 @@ Este projeto consiste em uma aplicação simples de CRUD (Criar, Ler, Atualizar 
 
 ## Descrição do Projeto
 
-A aplicação permite aos usuários gerenciar um cadastro simples, incluindo campos para Nome, CPF, Email, Telefone e Endereço (opcional). A interface é construída com componentes do Material UI, proporcionando um design moderno e responsivo.
+A aplicação permite aos usuários gerenciar um cadastro simples, incluindo campos para Nome, CPF, Email, Telefone e Endereço. A interface é construída com componentes do Material UI, proporcionando um design moderno e responsivo.
 
 ### Funcionalidades
 
