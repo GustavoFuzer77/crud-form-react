@@ -5,7 +5,7 @@ Este projeto consiste em uma aplicação simples de CRUD (Criar, Ler, Atualizar 
 - **React**
 - **Material UI**
 - **React Hook Form**
-- **Context API**
+- **Context API** (eu recriei a biblioteca **zustend**, portanto não estarei utilizando)
 - **Zod**
 - **Axios**
 - **json-server**
