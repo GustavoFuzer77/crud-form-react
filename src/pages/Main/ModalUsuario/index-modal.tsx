@@ -162,7 +162,7 @@ export function ModalFieldsUser({ schema }: IModalProps) {
               <InputField name="email" label="Digite o E-mail *" />
               <InputField name="cpf" label="CPF *" />
               <InputField name="telefone" label="Telefone *" />
-              <InputField name="endereco" label="Logradouro *" />
+              <InputField name="endereco" label="Endereço *" />
             </Form>
           </FormSection>
         </Box>

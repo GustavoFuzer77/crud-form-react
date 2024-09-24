@@ -35,7 +35,7 @@ export const FormSection = styled.section`
   }
 
   @media screen and (max-width: ${breakPoints.largeMobile}px) {
-    width: 100svw;
+    width: 90svw;
     height: 100svh;
   }
 `;
@@ -52,10 +52,14 @@ export const Section = styled.section`
   background-color: #fff;
   border-radius: 0.8rem;
   box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
-  width: 90%;
+  width: 80%;
   max-width: 120rem;
   padding: 2rem;
   margin: 0 auto;
+
+  @media screen and (max-wdiht: ${breakPoints.largeMobile}px) {
+    padding: 0rem;
+  }
 `;
 
 export const Header = styled.div`
@@ -71,6 +75,7 @@ export const Header = styled.div`
     font-size: 1.8rem;
     font-weight: bold;
     color: ${colors.textGray};
+    text-align: center;
   }
 
   @media screen and (max-width: ${breakPoints.largeMobile}px) {
