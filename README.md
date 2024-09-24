@@ -39,7 +39,7 @@ Para executar este projeto em sua máquina local, siga os passos abaixo:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   https://github.com/GustavoFuzer77/crud-form-react.git
    
 2. Navegue até o diretório do projeto:
    ```bash
